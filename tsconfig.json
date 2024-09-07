@@ -1,0 +1,63 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "skipLibCheck": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "types": [
+      "next",
+      "next-auth",
+      "node",
+      "prisma"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "plugins": [
+      {
+        "name": "next-plugin-tsconfig",
+        "transform": {
+          "src/**/*.ts": [
+            "next-plugin-tsconfig/transform",
+            {
+              "config": "./tsconfig.json"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "include": [
+    "src",
+    "next.config.js",
+    "tailwind.config.js",
+    "postcss.config.js",
+    ".eslintrc.js",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.d.ts"
+  ]
+}
